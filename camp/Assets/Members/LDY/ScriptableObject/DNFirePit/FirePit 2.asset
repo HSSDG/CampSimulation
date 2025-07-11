@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7159a63d0f34f869104fd67dd8d8ba, type: 3}
+  m_Name: FirePit 2
+  m_EditorClassIdentifier: 
+  dialogText: "\uB0AE\uACFC\uB294 \uB2E4\uB978 \uD48D\uACBD\uC744 \uAC10\uC0C1\uD558\uB358
+    \uC911, \uC7BF\uB354\uBBF8\uB97C \uC911\uC2EC\uC73C\uB85C \uB3D9\uADF8\uB797\uAC8C
+    \uB3CC\uC744 \uB458\uB7EC\uB193\uC740 \uC790\uB9AC\uB97C \uBC1C\uACAC\uD588\uB2E4."
+  hasChoices: 0
+  choices: []
+  eventToTrigger: {fileID: 0}
+  nextNodeIfNoChoice: {fileID: 11400000, guid: 3e1315dd30d8c4e82b2b3bba123948b9, type: 2}
+  worngAnswerNode: {fileID: 0}

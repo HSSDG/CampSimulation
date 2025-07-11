@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/mr58/Desktop/unity/githubdesktop/CampSimulation/camp/.utmp/RelWithDebInfo/3xh1135x/arm64-v8a'
+ninja: no work to do.
