@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EventManager_HW : MonoBehaviour
+public class EventManager_DY : MonoBehaviour
 {
     // 메인 카메라 하위 UI
     public GameObject UI_NoticeBar; // 안내바 - 여기가 나을까싶어서 넣어봄
@@ -24,7 +24,7 @@ public class EventManager_HW : MonoBehaviour
     public Text dialogText_Correct;
     public Text dialogText_Fail;
     // DialogManager 연결
-    public DialogManager_HW dialogManager;
+    public DialogManager_DY dialogManager;
 
     // HW
     public GameObject cook;
@@ -158,4 +158,5 @@ public class EventManager_HW : MonoBehaviour
         arrow.SetActive(true);
         sandBag.SetActive(true);
     }
+    
 }

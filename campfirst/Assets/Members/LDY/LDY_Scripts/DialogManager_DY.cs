@@ -5,25 +5,48 @@ using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 
-public class DialogManager : MonoBehaviour
+public class DialogManager_DY : MonoBehaviour
 {
     public Text dialogTextUI;
     public Button[] choiceButtons;
-    public EventManager eventManager;
+    public EventManager_DY eventManager;
 
-    private DialogNode currentNode;
+    private DialogNode_HW currentNode;    
     private bool showingWorngNode = false;  // 오답 노드를 보여주는 중인지 체크
-    private DialogNode nodeBeforeWrong;     // 오답 이전의 노드 저장
+    private DialogNode_HW nodeBeforeWrong;     // 오답 이전의 노드 저장
 
     public InputActionReference continueAction;
     private bool waitingForContinue = false;    // 컨트롤러 버튼 클릭 여부
-    public DialogNode firstNode;    // 맨 처음 실행 할 노드
+
+    public DialogNode_HW firstNode;    // 맨 처음 실행 할 노드
+    
+    private bool isWaitingMissionSuccess = false; // 성공할 때까지 대기
+    
+    public DialogNode_HW[] allNodesToReset;  // 인스펙터에서 원본 노드들 등록
+
+    private AudioSource soundPlayer;
+    public AudioClip buttonSound;
+    public AudioClip correctSound;
+    public AudioClip failSound;
+
+    // 추가 ******************************
+    public void ResetDialogNodes()
+    {
+        foreach (var node in allNodesToReset)
+        {
+            node.requiresMissionSuccess = true;
+            // 다른 필드 초기화도 필요시 여기에 추가
+        }
+    }
+    // ************************************
 
     void MakeChoice(int index)
     {
         var choice = currentNode.choices[index];
         if (choice.isCorrect)
         {
+            soundPlayer.clip = correctSound;
+            soundPlayer.Play();
             currentNode = choice.nextNode;
             ShowNode();
         }
@@ -32,6 +55,8 @@ public class DialogManager : MonoBehaviour
             // 오답 처리: 오답 노드를 보여주고, 끝나면 다시 원래 노드(선택지)로 돌아감
             if (currentNode.worngAnswerNode != null)
             {
+                soundPlayer.clip = failSound;
+                soundPlayer.Play();
                 nodeBeforeWrong = currentNode;
                 currentNode = currentNode.worngAnswerNode;
                 showingWorngNode = true;
@@ -54,14 +79,17 @@ public class DialogManager : MonoBehaviour
             return;
         }
 
-        dialogTextUI.text = currentNode.dialogText;
-
-        // GameEvent: 이벤트 발생
-        if (currentNode.eventToTrigger != null)
+        // GameEvent: 이벤트 발생 - 이벤트 먼저 발생하게 수정 HW
+        if (currentNode.eventToTriggers != null)
         {
-            eventManager.HandleEvent(currentNode.eventToTrigger);
+            foreach (var o in currentNode.eventToTriggers)
+            {
+                eventManager.HandleEvent(o);
+            }
         }
 
+        dialogTextUI.text = currentNode.dialogText;
+        
         // 선택지가 있는 경우 버튼 활성화
         if (currentNode.hasChoices)
         {
@@ -95,10 +123,12 @@ public class DialogManager : MonoBehaviour
     // 실행
     void Start()
     {
+        ResetDialogNodes(); // << 추가한 부분 ******************************************
         StartDialog(firstNode);
+        soundPlayer = GetComponent<AudioSource>();
     }
 
-    public void StartDialog(DialogNode startNode)
+    public void StartDialog(DialogNode_HW startNode)
     {
         currentNode = startNode;
         ShowNode();
@@ -117,7 +147,7 @@ public class DialogManager : MonoBehaviour
             AdvanceDialog();
         }
 
-        // XR 버튼 입력
+        // XR 버튼 입력 (아무 버튼)
         if (continueAction != null && continueAction.action.WasPressedThisFrame())
         {
             Debug.Log("버튼 눌림");
@@ -134,7 +164,26 @@ public class DialogManager : MonoBehaviour
     }
 
     // 다음 노드로 이동하는 함수 (버튼 입력 시 호출)
-    void AdvanceDialog()
+    public void AdvanceDialog()
+    {
+        // 미션 완료 조건인 경우엔 대기
+        if (currentNode.requiresMissionSuccess)
+        {
+            isWaitingMissionSuccess = true;
+            Debug.Log("AdvanceDialog() 대기 중: 미션 성공 필요");
+            return;
+        }
+
+        ContinueToNextNode();
+    }
+
+    // text 갈아끼우기
+    public void SetDialogTextUI(Text newTextUI)
+    {
+        dialogTextUI = newTextUI;
+    }
+
+    void ContinueToNextNode()
     {
         waitingForContinue = false;
 
@@ -148,7 +197,8 @@ public class DialogManager : MonoBehaviour
             currentNode = currentNode.nextNodeIfNoChoice;
         }
 
+        soundPlayer.clip = buttonSound;
+        soundPlayer.Play();
         ShowNode();
     }
-
 }
