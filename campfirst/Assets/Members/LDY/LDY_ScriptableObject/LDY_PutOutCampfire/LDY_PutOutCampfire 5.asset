@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194169f0cd9e44291936c253dd1b94f1, type: 3}
+  m_Name: LDY_PutOutCampfire 5
+  m_EditorClassIdentifier: 
+  dialogText: "\uC774\uC81C\uC57C \uC548\uC2EC\uC774\uB124.\n\uB9C8\uC9C0\uB9C9\uAE4C\uC9C0
+    \uCC45\uC784\uAC10 \uC788\uAC8C \uBD88\uC528\uB97C \uAEBC\uC11C\n\uC548\uC804\uD558\uAC8C
+    \uCEA0\uD504\uD30C\uC774\uC5B4\uB97C \uB9C8\uBB34\uB9AC \uD588\uB2E4."
+  hasChoices: 0
+  choices: []
+  eventToTriggers:
+  - {fileID: 11400000, guid: cacf0276f04c8443e833ebbd90dd2289, type: 2}
+  nextNodeIfNoChoice: {fileID: 11400000, guid: ecd18800518fb4e079d1357477440396, type: 2}
+  worngAnswerNode: {fileID: 0}
+  requiresMissionSuccess: 0

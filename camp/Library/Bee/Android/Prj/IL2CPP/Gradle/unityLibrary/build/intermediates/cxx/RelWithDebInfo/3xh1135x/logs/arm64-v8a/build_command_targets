@@ -1,5 +1,0 @@
-/Applications/Unity/Hub/Editor/6000.0.46f1/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1/bin/ninja \
-  -C \
-  /Users/mr58/Desktop/unity/githubdesktop/CampSimulation/camp/.utmp/RelWithDebInfo/3xh1135x/arm64-v8a \
-  game \
-  swappywrapper

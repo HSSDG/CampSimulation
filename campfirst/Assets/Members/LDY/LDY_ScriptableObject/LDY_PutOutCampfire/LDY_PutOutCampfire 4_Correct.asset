@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194169f0cd9e44291936c253dd1b94f1, type: 3}
+  m_Name: LDY_PutOutCampfire 4_Correct
+  m_EditorClassIdentifier: 
+  dialogText: "\uC798 \uC120\uD0DD\uD588\uC5B4\uC694!\n\uD65C\uD65C \uD0C0\uB294
+    \uBD88\uC740 \uBA3C\uC800 \uBAA8\uB798\uB85C \uB36E\uC5B4 \uC0B0\uC18C\uB97C
+    \uCC28\uB2E8\uD574\n\uBD88\uAF43\uC744 \uAEBC\uC57C \uD574\uC694. \uADF8\uB798\uC57C
+    \uBD88\uC528\uAC00 \uB0A0\uB9AC\uC9C0 \uC54A\uACE0\n\uC548\uC804\uD558\uAC8C
+    \uC9C4\uD654\uD560 \uC218 \uC788\uC5B4\uC694."
+  hasChoices: 0
+  choices: []
+  eventToTriggers:
+  - {fileID: 11400000, guid: db9037ff5fafe4fbe9850dc10bee131e, type: 2}
+  nextNodeIfNoChoice: {fileID: 11400000, guid: 28666d377e315497e9453f6a835d4ff9, type: 2}
+  worngAnswerNode: {fileID: 0}
+  requiresMissionSuccess: 0

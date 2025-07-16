@@ -103,3 +103,4 @@ InitTestScene*.unity*
 *.a
 *.lib
 *.exe
+*.aar

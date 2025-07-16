@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194169f0cd9e44291936c253dd1b94f1, type: 3}
+  m_Name: LDY_FirePit 2
+  m_EditorClassIdentifier: 
+  dialogText: "\uD480\uBC8C\uB808\uAC00 \uC6B0\uB294 \uC18C\uB9AC\uB97C \uACBD\uCCAD\uD558\uBA70
+    \uBD84\uC704\uAE30\uB97C \uC990\uAE30\uB358 \uC911, \n\uC7BF\uB354\uBBF8\uB97C
+    \uC911\uC2EC\uC73C\uB85C \uB098\uBB34\uC7A5\uC791\uC744 \uC138\uC6CC\uB193\uC740
+    \uC790\uB9AC\uB97C \uBC1C\uACAC\uD588\uB2E4."
+  hasChoices: 0
+  choices: []
+  eventToTriggers:
+  - {fileID: 11400000, guid: cacf0276f04c8443e833ebbd90dd2289, type: 2}
+  nextNodeIfNoChoice: {fileID: 11400000, guid: a99e845b5c4e1476a9e7549134c01491, type: 2}
+  worngAnswerNode: {fileID: 0}
+  requiresMissionSuccess: 0

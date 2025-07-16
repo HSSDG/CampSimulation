@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194169f0cd9e44291936c253dd1b94f1, type: 3}
+  m_Name: LDY_NextScene
+  m_EditorClassIdentifier: 
+  dialogText: "<color=#2E8B57><b>\uCEA0\uD504\uD30C\uC774\uC5B4\uB97C \uB9C8\uCCE4\uC2B5\uB2C8\uB2E4.</b></color>\n<b>\uD0C0\uC624\uB974\uB294
+    \uBD88\uAF43\uC5D0 \uCD94\uC5B5\uC744 \uB2F4\uB418,</b>\n<b>\uBD88\uC528\uC5D4
+    \uCC45\uC784\uC744 \uB2F4\uC544\uC694.</b>\n\n<b>\uC774\uC81C, \uB2E4\uC74C \uC5EC\uC815\uC744
+    \uC774\uC5B4\uAC00 \uBCFC\uAE4C\uC694?</b>"
+  hasChoices: 0
+  choices: []
+  eventToTriggers:
+  - {fileID: 11400000, guid: 1168aa50e80084cdc907a95942cd8ced, type: 2}
+  nextNodeIfNoChoice: {fileID: 0}
+  worngAnswerNode: {fileID: 0}
+  requiresMissionSuccess: 0
